@@ -5,6 +5,10 @@ const QuizSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  session: {
+    type: Number,
+    required: true,
+  },
   question: {
     type: String,
     required: true,

@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const UserRoute = require("./routes/user.route.js");
 require("dotenv").config();
 const app = express();
 
@@ -15,8 +16,8 @@ const check = (req, res) => {
 const check2 = (req, res) => {
   return res.status(200).json({ message: "api Working" });
 };
-app.use("/api/", UserRoute);
-app.use("/api/", QuizRoute);
+app.use("/api", UserRoute);
+// app.use("/api/", QuizRoute);
 
 app.use((req, res, next, err) => {
   const statusCode = err.statusCode || 500;
