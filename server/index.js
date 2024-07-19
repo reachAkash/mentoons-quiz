@@ -19,10 +19,10 @@ const check2 = (req, res) => {
 app.use("/api", UserRoute);
 // app.use("/api/", QuizRoute);
 
-app.use((req, res, next, err) => {
-  const statusCode = err.statusCode || 500;
+app.use((err, req, res, next) => {
+  const errCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
-  return res.status(statusCode).json(message);
+  return res.status(errCode).json(message);
 });
 
 app.listen(process.env.PORT || 5000, () => {
