@@ -20,7 +20,7 @@ export function Sidebar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((store: any) => store.user);
-  console.log(currentUser);
+
   const handleSignout = () => {
     dispatch(signoutSuccess());
   };
@@ -28,7 +28,7 @@ export function Sidebar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="primary">
+        <Button>
           <Menu />
         </Button>
       </SheetTrigger>

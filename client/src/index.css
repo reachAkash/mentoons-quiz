@@ -78,7 +78,7 @@ body,
 }
 
 .container {
-  @apply xs:max-w-[375px] sm:max-w-[768px] md:max-w-[1024px] lg:max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1920px];
+  @apply xs:max-w-[450px] sm:max-w-[768px] md:max-w-[1024px] lg:max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1920px];
 }
 
 .bg-quizBg {
@@ -111,6 +111,10 @@ body,
   text-shadow: 2px 3px 4px #414068;
 }
 
+.white-text-shadow {
+  text-shadow: 2px 3px 4px #ffffff;
+}
+
 .angled-container {
   clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
   display: flex;
@@ -128,4 +132,22 @@ body,
   -webkit-box-shadow: 9px 9px 17px -11px rgba(255, 0, 0, 1);
   -moz-box-shadow: 9px 9px 17px -11px rgba(255, 0, 0, 1);
   box-shadow: 9px 9px 17px -11px rgba(255, 0, 0, 1);
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+.quiz-image {
+  animation: updown 3s linear infinite;
 }

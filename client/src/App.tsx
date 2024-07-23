@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Button } from "./components/ui/button";
 import LandingPage from "./components/LandingPage";
+import Category from "./components/Category";
+import QuizPage from "./components/QuizPage";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
+        <Route path="/category" element={<Category />}></Route>
+        <Route path="/quiz" element={<QuizPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
