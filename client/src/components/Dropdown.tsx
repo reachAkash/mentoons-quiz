@@ -4,7 +4,6 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,7 +11,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 const components: { title: string; href: string; description: string }[] = [
