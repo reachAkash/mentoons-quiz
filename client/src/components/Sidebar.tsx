@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { RxHamburgerMenu } from "react-icons/rx";
 import Logo from "/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,8 +26,8 @@ export function Sidebar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button>
-          <Menu />
+        <Button size={"sm"}>
+          <RxHamburgerMenu />
         </Button>
       </SheetTrigger>
       <SheetContent>
