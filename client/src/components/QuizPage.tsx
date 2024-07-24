@@ -5,13 +5,19 @@ import Printer from "@/assets/printer.png";
 import { VscListSelection } from "react-icons/vsc";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { toast } from "sonner";
 
 const QuizPage: React.FC = () => {
   const location = useLocation();
+  const [nextQuestion, setNextQuestion] = useState<boolean>(false);
   const queryParams = new URLSearchParams(location.search);
   const type = queryParams.get("type");
   const [options, setOptions] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
+
+  const handleShowToast = (content: string) => {
+    toast(<span className="font-semibold text-xl">{content}</span>);
+  };
 
   const arr = [
     "Akash Testing 1",
@@ -68,9 +74,10 @@ const QuizPage: React.FC = () => {
           </div>
           {options && (
             <div className="grid grid-cols-2 gap-x-4 md:gap-x-[2rem] gap-y-4">
-              {arr?.map((item) => {
+              {arr?.map((item, index) => {
                 return (
                   <div
+                    key={index}
                     onClick={(e) => handleSelectedValue(e)}
                     className={`${
                       value == item
@@ -84,7 +91,15 @@ const QuizPage: React.FC = () => {
               })}
             </div>
           )}
-          <div className="cursor-pointer hover:bg-white hover:text-red-500 transition-all duration-300 ease-in-out bg-red-500 text-white px-3 py-2 rounded-md">
+          <div
+            onClick={() => {
+              handleShowToast("Under Development 😉");
+              setTimeout(() => {
+                setNextQuestion(true);
+              }, 1000);
+            }}
+            className="cursor-pointer hover:bg-white hover:text-red-500 transition-all duration-300 ease-in-out bg-red-500 text-white px-3 py-2 rounded-md"
+          >
             Check
           </div>
         </div>
